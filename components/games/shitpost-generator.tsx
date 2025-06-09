@@ -210,9 +210,7 @@ export function ShitpostGeneratorGame() {
               <div className="text-center p-3 bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-lg">
                 <div className="text-lg">
                   <span className="text-2xl mr-2">{qualityRating.emoji}</span>
-                  <span className="font-semibold">{qual
-
-ityRating.level}</span>
+                  <span className="font-semibold">{qualityRating.level}</span>
                 </div>
                 <div className="text-xs text-muted-foreground">
                   {qualityRating.description}
