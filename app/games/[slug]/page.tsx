@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { getGameById } from '@/lib/game-data';
+import { getGameById, games } from '@/lib/game-data';
 import { updateGameStats } from '@/lib/storage';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -23,6 +23,12 @@ import { UselessnessPredictorGame } from '@/components/games/uselessness-predict
 import { WaitingGame } from '@/components/games/waiting-game';
 import { FortuneCookieGame } from '@/components/games/fortune-cookie';
 import { RockNftGame } from '@/components/games/rock-nft';
+
+export async function generateStaticParams() {
+  return games.map((game) => ({
+    slug: game.id,
+  }));
+}
 
 interface GamePageProps {
   params: { slug: string };
