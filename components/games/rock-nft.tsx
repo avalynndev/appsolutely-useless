@@ -235,7 +235,7 @@ export function RockNftGame() {
               Adding to the blockchain of disappointment...
             </div>
           </div>
-        ) : (
+        ) : selectedRock ? (
           <div className="space-y-4">
             {/* Rock Preview */}
             <div className="text-center p-4 bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200 rounded-lg">
@@ -286,7 +286,7 @@ export function RockNftGame() {
               </Button>
             </div>
           </div>
-        )}
+        ) : null}
 
         {/* Collection Display */}
         {collection.length > 0 && (
