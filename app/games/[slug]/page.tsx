@@ -1,5 +1,5 @@
 import { games } from "@/lib/game-data";
-import { GamePageClient } from "./view";
+import { GamePageClient } from "@/components/game-view";
 
 export async function generateStaticParams() {
   return games.map((game) => ({
@@ -7,10 +7,7 @@ export async function generateStaticParams() {
   }));
 }
 
-interface GamePageProps {
-  params: { slug: string };
-}
 
-export default function GamePage({ params }: GamePageProps) {
-  return <GamePageClient slug={params.slug} />;
+export default function GamePage({ params }: any) {
+  return <GamePageClient params={params} />;
 }
