@@ -23,12 +23,16 @@ import { WaitingGame } from "@/components/games/waiting-game";
 import { FortuneCookieGame } from "@/components/games/fortune-cookie";
 import { RockNftGame } from "@/components/games/rock-nft";
 
-export function GamePageClient({ params }: any) {
+interface GamePageClientProps {
+  slug: string;
+}
+
+export function GamePageClient({ slug }: GamePageClientProps) {
   const router = useRouter();
   const [startTime, setStartTime] = useState<number>(0);
   const [gameKey, setGameKey] = useState<number>(0);
 
-  const game = getGameById(params);
+  const game = getGameById(slug);
 
   useEffect(() => {
     if (!game) return;
