@@ -1,16 +1,10 @@
-import { games } from "@/lib/game-data";
+'use client'
+ 
+import { useParams } from 'next/navigation'
 import { GamePageClient } from "./view";
 
-export async function generateStaticParams() {
-  return games.map((game) => ({
-    slug: game.id,
-  }));
-}
 
-interface GamePageProps {
-  params: { slug: string };
-}
-
-export default function GamePage({ params }: GamePageProps) {
+export default function GamePage() {
+  const params = useParams<{ slug: string }>();
   return <GamePageClient slug={params.slug} />;
 }
